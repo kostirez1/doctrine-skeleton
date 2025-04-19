@@ -4,9 +4,6 @@ extensions:
 	console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
 
 	nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
-	nettrine.orm: Nettrine\ORM\DI\OrmExtension
-
-	nettrine.fixtures: Nettrine\Fixtures\DI\FixturesExtension
 	nettrine.migrations: Nettrine\Migrations\DI\MigrationsExtension
 
 nettrine.dbal:
@@ -35,28 +32,6 @@ nettrine.dbal:
 			charset:  UTF8
 			serverVersion: 10.10.0
 
-nettrine.orm:
-	managers:
-		default:
-			connection: default
-			mapping:
-				App:
-					type: attributes
-					directories: [%appDir%/Domain/Database]
-					namespace: App\Domain\Database
-		second:
-			connection: second
-			mapping:
-				App:
-					type: attributes
-					directories: [%appDir%/Domain/Database]
-					namespace: App\Domain\Database
-
-nettrine.fixtures:
-	paths:
-		- %appDir%/../db/Fixtures
-
 nettrine.migrations:
 	directories:
 		DB\Migrations: %appDir%/../db/%migration.db%
-	manager: %migration.manager%
