@@ -14,18 +14,18 @@ php:
 parameters:
 	postgres:
 		driver: pdo_pgsql
-		host: localhost
+		host: postgres
 		port: 5432
 		user: contributte
 		password: contributte
-		dbname: contributte
+		dbname: demopostgres
 	mariadb:
 		driver: mysqli
-		host: localhost
+		host: mariadb
 		port: 3306
 		user: contributte
 		password: contributte
-		dbname: contributte
+		dbname: demomariadb
 
 	migration:
 		db: postgres
